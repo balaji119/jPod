@@ -1,0 +1,39 @@
+﻿<Window x:Class="jPod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:jPod"
+        mc:Ignorable="d"
+        Title="jPod" WindowState="Maximized">
+    <DockPanel LastChildFill="True">
+        <local:PlayControlView DockPanel.Dock="Bottom"></local:PlayControlView>
+        <StackPanel DockPanel.Dock="Left" MinWidth="180">
+            <Expander IsExpanded="True">
+                <Expander.Header>
+                    <Label TextElement.FontWeight="Bold">Library</Label>
+                </Expander.Header>
+                <local:LibraryView></local:LibraryView>
+            </Expander>
+            <Expander IsExpanded="True">
+                <Expander.Header>
+                    <Label TextElement.FontWeight="Bold">PlayLists</Label>
+                </Expander.Header>
+                <local:PlayListView></local:PlayListView>
+            </Expander>
+            <GroupBox>
+                <GroupBox.Header>
+                    <Label TextElement.FontWeight="Bold">Create Playlist</Label>
+                </GroupBox.Header>
+                <local:CreatePlayListview></local:CreatePlayListview>
+            </GroupBox>
+            <GroupBox>
+                <GroupBox.Header>
+                    <Label TextElement.FontWeight="Bold">Add Song Library</Label>
+                </GroupBox.Header>
+                <local:SetDirectoryView></local:SetDirectoryView>
+            </GroupBox>
+        </StackPanel>
+        <local:SongDisplayView DockPanel.Dock="Top"></local:SongDisplayView>
+    </DockPanel>
+</Window>
